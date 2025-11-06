@@ -1,0 +1,192 @@
+/* Base Styles */
+:root {
+    --primary-color: #000000;
+    --text-color: #000000;
+    --light-text: #666;
+    --bg-color: #ffffff;
+    --transition: all 0.3s ease;
+    --gold-accent: #c9a16b;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Set base font size */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem; /* Use rem for font sizes */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Header */
+.header {
+    margin-bottom: 3rem;
+}
+
+/* Typography */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+    color: var(--text-color);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    color: var(--light-text);
+    margin: 0 0 3rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold-accent);
+}
+
+.message {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 3rem 0 4rem;
+    color: var(--light-text);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    margin: 0.25rem 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+.phone-numbers {
+    margin-top: 0.25rem;
+}
+
+.divider {
+    margin: 0 1rem;
+    color: var(--light-text);
+}
+
+.copyright {
+    font-size: 0.65rem;
+    color: var(--light-text);
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Slightly reduce base font size on smaller screens */
+    }
+    .container {
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .message {
+        font-size: 0.95rem;
+        margin: 2.5rem 0 3.5rem;
+    }
+    
+    .phone-numbers {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .divider {
+        display: none;
+    }
+    
+    .contact-link, .copyright {
+        font-size: 0.65rem;
+    }
+}
